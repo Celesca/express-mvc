@@ -2,8 +2,8 @@ import express, { Express, Request, Response } from 'express';
 import dotenv from "dotenv";
 import mysql from "mysql2/promise";
 import bodyParser from "body-parser";
-import userRouter from '../router/userRouter';
-import adminRouter from '../router/adminRouter';
+import UserRouter from '../router/UserRouter';
+import AdminRouter from '../router/AdminRouter';
 
 dotenv.config();
 
@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
-app.use('/api/', userRouter)
-app.use('/api/admin', adminRouter)
+app.use('/api/', UserRouter)
+app.use('/api/admin', AdminRouter)
 
 app.get('/testdb', async (req: Request, res: Response) => {
     mysql.createConnection({

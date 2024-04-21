@@ -1,7 +1,8 @@
 import { Router } from "express";
+import UserController from "../pkg/user/controller/UserController";
 
-const userRouter = Router();
+const UserRouter = Router();
 
-userRouter.get("/", )
+UserRouter.get("/lotteries", UserController.GetAllLotteries )
 
-export default userRouter;
+export default UserRouter;

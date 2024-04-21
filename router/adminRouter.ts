@@ -1,9 +1,9 @@
 import { Router } from "express";
 
-const adminRouter = Router();
+const AdminRouter = Router();
 
-adminRouter.get("/", (req, res) => {
+AdminRouter.get("/", (req, res) => {
     res.send("Admin route");
 })
 
-export default adminRouter;
+export default AdminRouter;
