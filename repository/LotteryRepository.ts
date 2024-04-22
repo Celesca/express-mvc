@@ -6,13 +6,16 @@ export class LotteryRepository {
     constructor() {
         this.connection = mysql.createPool({
             host: 'localhost',
-
+            user: 'root',
+            password: '',
+            port: 3306,
+            database: 'lottery_db',
         } )
     }
 
     async findAll() {
         const [rows] = await this.connection.query('SELECT * FROM lottery');
+        console.log(rows)
         return rows;
     }
 }
-    
