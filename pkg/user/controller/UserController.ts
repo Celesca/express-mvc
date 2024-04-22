@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
+import UserService from "../service/UserService";
 
-function GetAllLotteries(req: Request, res: Response) {
-    const Lotteries: Lottery[] = 
-    res.json({"message" : 'Get all lotteries'});
+async function GetAllLotteries(req: Request, res: Response) {
+    const Lotteries:any = await UserService.GetAllLotteries();
+    res.json(Lotteries);
 }
 
 export default { GetAllLotteries }
