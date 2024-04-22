@@ -2,8 +2,8 @@ import { Router } from "express";
 
 const AdminRouter = Router();
 
-AdminRouter.get("/", (req, res) => {
-    res.send("Admin route");
+AdminRouter.get("/healthcheck", (req, res) => {
+    res.send("Admin Healthcheck")
 })
 
 export default AdminRouter;
